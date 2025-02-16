@@ -4,18 +4,22 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+builder.Services.AddControllers();  // ✅ Agrega soporte para controladores
+builder.Services.AddSwaggerGen();
 builder.Services.AddOpenApi();
 //Se agrega el dbcontext
 builder.Services.AddSqlServer<BankContext>(builder.Configuration.GetConnectionString("BankConnection"));
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configurar el pipeline de la aplicación
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
 
 app.UseHttpsRedirection();
+
+app.MapControllers();  // ✅ Esto mapea los controladores correctament
 
 var summaries = new[]
 {
