@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using BankAPI.Services;
 using BankAPI.Data.BankModels;
+using System.Threading.Tasks;
 
 namespace BankAPI.Controllers;
 [ApiController]
@@ -15,9 +16,24 @@ public class ClientController:ControllerBase{
     public IEnumerable<Client> GetAll(){
         return _service.GetAll();
     }
+    //REST asincrono
+    [HttpGet("async")]
+    public async Task<IEnumerable<Client>> GetAllAsync(){
+        return await _service.GetAllAsync();
+    }
+
     [HttpGet("{id}")]
     public ActionResult<Client> GetById(int id){
         var client=_service.GetById(id);
+        if (client is null){
+            return NotFound();
+        }
+        return client;
+    }
+    //
+    [HttpGet("async/{id}")]
+    public async Task<ActionResult<Client>> GetByIdAsync(int id){
+        var client=await _service.GetByIdAsync(id);
         if (client is null){
             return NotFound();
         }
@@ -29,7 +45,7 @@ public class ClientController:ControllerBase{
         //Se llama a la funcion getbyid para devolver el id creado
         return CreatedAtAction(nameof(GetById),new {id=newClient.Id},newClient);
     }
-    [HttpPut]
+    [HttpPut("{id}")]
     public IActionResult Update(int id,Client client){
         if(id!=client.Id){
             return BadRequest();
@@ -37,6 +53,21 @@ public class ClientController:ControllerBase{
         var clientToUpdate=_service.GetById(id);
         if(clientToUpdate is not null){
             _service.Update(id,client);
+            return NoContent();
+        }else{
+            return NotFound();
+        }
+
+    }
+    //Servicio asincrono
+    [HttpPut("async/{id}")]
+    public async Task<IActionResult> UpdateAsync(int id,Client client){
+        if(id!=client.Id){
+            return BadRequest(new{message=$"El ID {id} de la URL no coincide con el ID({client.Id}) del cuerpo de la solicitud"});
+        }
+        var clientToUpdate=await _service.GetByIdAsync(id);
+        if(clientToUpdate is not null){
+            await _service.UpdateAsync(id,client);
             return NoContent();
         }else{
             return NotFound();
@@ -53,4 +84,8 @@ public class ClientController:ControllerBase{
             return NotFound();
         }
     }
+    //Esto genera error si no tiene un método HTTP explícito
+    /*public NotFoundObjectResult ClientNotFound(int id){
+        return NotFound(new {message=$"El cliente con ID={id} no existe."});
+    }*/
 }
