@@ -1,9 +1,12 @@
+using BankAPI.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
-
+//Se agrega el dbcontext
+builder.Services.AddSqlServer<BankContext>(builder.Configuration.GetConnectionString("BankConnection"));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
