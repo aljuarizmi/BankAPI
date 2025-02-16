@@ -1,4 +1,5 @@
 using BankAPI.Data;
+using BankAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,9 @@ builder.Services.AddSwaggerGen(); // ✅ Agrega Swagger para documentación
 //builder.Services.AddOpenApi();
 //Se agrega el dbcontext
 builder.Services.AddSqlServer<BankContext>(builder.Configuration.GetConnectionString("BankConnection"));
+//Capa de servicios/Service layer
+//Esta sentencia nos permite inyectar el servicio
+builder.Services.AddScoped<ClientService>();
 var app = builder.Build();
 
 // Configurar el pipeline de la aplicación
