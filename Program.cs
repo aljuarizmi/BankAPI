@@ -22,6 +22,8 @@ builder.Services.AddSqlServer<BankContext>(builder.Configuration.GetConnectionSt
 //Capa de servicios/Service layer
 //Esta sentencia nos permite inyectar el servicio
 builder.Services.AddScoped<ClientService>();
+builder.Services.AddScoped<AccountService>();
+builder.Services.AddScoped<AccountTypeService>();
 var app = builder.Build();
 
 // Configurar el pipeline de la aplicación

@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using BankAPI.Data;
 using BankAPI.Data.BankModels;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 namespace BankAPI.Services;
 
@@ -70,4 +71,7 @@ public class ClientService{
             _context.SaveChanges();
         }
     }
+    /*public NotFoundObjectResult ClientNotFound(int id){
+        return NotFound(new {message=$"El cliente con ID={id} no existe."});
+    }*/
 }
