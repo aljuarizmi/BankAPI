@@ -1,3 +1,4 @@
+using System.Reflection;
 using BankAPI.Data;
 using BankAPI.Services;
 
@@ -7,7 +8,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddControllers();  // ✅ Agrega soporte para controladores
 builder.Services.AddEndpointsApiExplorer(); // ✅ Permite la exploración de API
-builder.Services.AddSwaggerGen(); // ✅ Agrega Swagger para documentación
+builder.Services.AddSwaggerGen(options =>
+{
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    options.IncludeXmlComments(xmlPath);
+}
+); // ✅ Agrega Swagger para documentación
 
 //builder.Services.AddOpenApi();
 //Se agrega el dbcontext

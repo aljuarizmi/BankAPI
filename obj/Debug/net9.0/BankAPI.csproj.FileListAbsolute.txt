@@ -1,3 +1,11 @@
+D:\desarrollo\angular\bankapi\obj\Debug\net9.0\BankAPI.csproj.AssemblyReference.cache
+D:\desarrollo\angular\bankapi\obj\Debug\net9.0\BankAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\desarrollo\angular\bankapi\obj\Debug\net9.0\BankAPI.AssemblyInfoInputs.cache
+D:\desarrollo\angular\bankapi\obj\Debug\net9.0\BankAPI.AssemblyInfo.cs
+D:\desarrollo\angular\bankapi\obj\Debug\net9.0\BankAPI.csproj.CoreCompileInputs.cache
+D:\desarrollo\angular\bankapi\obj\Debug\net9.0\BankAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\desarrollo\angular\bankapi\obj\Debug\net9.0\BankAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\desarrollo\angular\bankapi\obj\Debug\net9.0\BankAPI.sourcelink.json
 D:\desarrollo\angular\bankapi\bin\Debug\net9.0\appsettings.Development.json
 D:\desarrollo\angular\bankapi\bin\Debug\net9.0\appsettings.json
 D:\desarrollo\angular\bankapi\bin\Debug\net9.0\BankAPI.staticwebassets.endpoints.json
@@ -6,6 +14,7 @@ D:\desarrollo\angular\bankapi\bin\Debug\net9.0\BankAPI.deps.json
 D:\desarrollo\angular\bankapi\bin\Debug\net9.0\BankAPI.runtimeconfig.json
 D:\desarrollo\angular\bankapi\bin\Debug\net9.0\BankAPI.dll
 D:\desarrollo\angular\bankapi\bin\Debug\net9.0\BankAPI.pdb
+D:\desarrollo\angular\bankapi\bin\Debug\net9.0\BankAPI.xml
 D:\desarrollo\angular\bankapi\bin\Debug\net9.0\Azure.Core.dll
 D:\desarrollo\angular\bankapi\bin\Debug\net9.0\Azure.Identity.dll
 D:\desarrollo\angular\bankapi\bin\Debug\net9.0\Humanizer.dll
@@ -143,14 +152,6 @@ D:\desarrollo\angular\bankapi\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Dr
 D:\desarrollo\angular\bankapi\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 D:\desarrollo\angular\bankapi\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\desarrollo\angular\bankapi\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-D:\desarrollo\angular\bankapi\obj\Debug\net9.0\BankAPI.csproj.AssemblyReference.cache
-D:\desarrollo\angular\bankapi\obj\Debug\net9.0\BankAPI.GeneratedMSBuildEditorConfig.editorconfig
-D:\desarrollo\angular\bankapi\obj\Debug\net9.0\BankAPI.AssemblyInfoInputs.cache
-D:\desarrollo\angular\bankapi\obj\Debug\net9.0\BankAPI.AssemblyInfo.cs
-D:\desarrollo\angular\bankapi\obj\Debug\net9.0\BankAPI.csproj.CoreCompileInputs.cache
-D:\desarrollo\angular\bankapi\obj\Debug\net9.0\BankAPI.MvcApplicationPartsAssemblyInfo.cs
-D:\desarrollo\angular\bankapi\obj\Debug\net9.0\BankAPI.MvcApplicationPartsAssemblyInfo.cache
-D:\desarrollo\angular\bankapi\obj\Debug\net9.0\BankAPI.sourcelink.json
 D:\desarrollo\angular\bankapi\obj\Debug\net9.0\scopedcss\bundle\BankAPI.styles.css
 D:\desarrollo\angular\bankapi\obj\Debug\net9.0\staticwebassets.build.json
 D:\desarrollo\angular\bankapi\obj\Debug\net9.0\staticwebassets.development.json
@@ -164,6 +165,7 @@ D:\desarrollo\angular\bankapi\obj\Debug\net9.0\staticwebassets.pack.json
 D:\desarrollo\angular\bankapi\obj\Debug\net9.0\BankAPI.csproj.Up2Date
 D:\desarrollo\angular\bankapi\obj\Debug\net9.0\BankAPI.dll
 D:\desarrollo\angular\bankapi\obj\Debug\net9.0\refint\BankAPI.dll
+D:\desarrollo\angular\bankapi\obj\Debug\net9.0\BankAPI.xml
 D:\desarrollo\angular\bankapi\obj\Debug\net9.0\BankAPI.pdb
 D:\desarrollo\angular\bankapi\obj\Debug\net9.0\BankAPI.genruntimeconfig.cache
 D:\desarrollo\angular\bankapi\obj\Debug\net9.0\ref\BankAPI.dll

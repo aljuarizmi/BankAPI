@@ -12,7 +12,18 @@ public class ClientController:ControllerBase{
     public ClientController(ClientService client){
         _service=client;
     }
+    /// <summary>
+    /// Obtiene la lista de clientes disponibles.
+    /// </summary>
+    /// <remarks>
+    /// Este servicio retorna una lista de clientes registrados en el sistema.
+    /// </remarks>
+    /// <returns>Lista de clientes</returns>
+    /// <response code="200">Retorna la lista de clientes</response>
+    /// <response code="400">Si la petición es incorrecta</response>
     [HttpGet]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IEnumerable<Client> GetAll(){
         return _service.GetAll();
     }
