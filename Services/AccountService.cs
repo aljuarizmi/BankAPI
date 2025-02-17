@@ -13,13 +13,31 @@ public class AccountService{
         this.accountTypeService=accountTypeService;
         this.clientService=clientService;
     }
-    public async Task<IEnumerable<Account>> GetAllAsync(){
-        return await _context.Accounts.ToListAsync();
+    public async Task<IEnumerable<AccountDtoOut>> GetAll(){
+        return await _context.Accounts.Select(a=>new AccountDtoOut
+        {
+            Id=a.Id,
+            AccountName=a.AccountTypeNavigation.Name,
+            ClientName=a.Client!=null?a.Client.Name:"",
+            Balance=a.Balance,
+            RegDate=a.RegDate
+        }).ToListAsync();
+    }
+    public async Task<AccountDtoOut> GetDtoBId(int id){
+        return await _context.Accounts.Where(a=>a.Id==id).
+        Select(a=>new AccountDtoOut
+        {
+            Id=a.Id,
+            AccountName=a.AccountTypeNavigation.Name,
+            ClientName=a.Client!=null?a.Client.Name:"",
+            Balance=a.Balance,
+            RegDate=a.RegDate
+        }).SingleOrDefaultAsync();
     }
     public Account? GetById(int id){
         return _context.Accounts.Find(id);
     }
-    public Account Create(AccountDTO account){
+    public Account Create(AccountDtoIn account){
         var newAccount=new Account();
         newAccount.AccountType=account.AccountType;
         newAccount.ClientId=account.ClientId;
@@ -29,7 +47,7 @@ public class AccountService{
         //Se llama a la funcion getbyid para devolver el id creado
         return newAccount;
     }
-    public async Task UpdateAsync(int id,AccountDTO account){
+    public async Task UpdateAsync(int id,AccountDtoIn account){
         var existingAccount=GetById(id);
         if(existingAccount is not null){
             existingAccount.AccountType=account.AccountType;
@@ -45,7 +63,7 @@ public class AccountService{
             await _context.SaveChangesAsync();
         }
     }
-    public async Task<string> ValidateAccount(AccountDTO account){
+    public async Task<string> ValidateAccount(AccountDtoIn account){
         string result="Valid";
         //var accountType=await accountTypeService.GetByIdAsync(account.AccountType);
         var accountType=accountTypeService.GetById(account.AccountType);

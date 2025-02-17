@@ -17,14 +17,14 @@ public class AccountController:ControllerBase{
         this.clientService=clientService;
     }
     //REST asincrono
-    [HttpGet("async")]
-    public async Task<IEnumerable<Account>> GetAllAsync(){
-        return await accountService.GetAllAsync();
+    [HttpGet]
+    public async Task<IEnumerable<AccountDtoOut>> GetAll(){
+        return await accountService.GetAll();
     }
     //REST asincrono
     [HttpGet("async/{id}")]
-    public ActionResult<Account> GetById(int id){
-        var account=accountService.GetById(id);
+    public async Task<ActionResult<AccountDtoOut>> GetById(int id){
+        var account=await accountService.GetDtoBId(id);
         if (account is null){
             return NotFound();
         }
@@ -32,7 +32,7 @@ public class AccountController:ControllerBase{
     }
     //Servicio asincrono
     [HttpPut("async/{id}")]
-    public async Task<IActionResult> UpdateAsync(int id,AccountDTO account){
+    public async Task<IActionResult> UpdateAsync(int id,AccountDtoIn account){
         if(id!=account.Id){
             return BadRequest(new{message=$"El ID {id} de la URL no coincide con el ID({account.Id}) del cuerpo de la solicitud"});
         }
@@ -49,7 +49,7 @@ public class AccountController:ControllerBase{
         }
     }
     [HttpPost]
-    public async Task<IActionResult> Create(AccountDTO account){
+    public async Task<IActionResult> Create(AccountDtoIn account){
         string validationResult=await accountService.ValidateAccount(account);
         if(!validationResult.Equals("Valid")){
             return BadRequest(new{message=validationResult});
