@@ -33,6 +33,7 @@ public class AccountController:ControllerBase{
         return account;
     }
     //Servicio asincrono
+    [Authorize(Policy="SuperAdmin")]
     [HttpPut("async/{id}")]
     public async Task<IActionResult> UpdateAsync(int id,AccountDtoIn account){
         if(id!=account.Id){
@@ -50,6 +51,7 @@ public class AccountController:ControllerBase{
             return NotFound();
         }
     }
+    [Authorize(Policy="SuperAdmin")]
     [HttpPost]
     public async Task<IActionResult> Create(AccountDtoIn account){
         string validationResult=await accountService.ValidateAccount(account);
@@ -60,6 +62,7 @@ public class AccountController:ControllerBase{
         //Se llama a la funcion getbyid para devolver el id creado
         return CreatedAtAction(nameof(GetById),new {id=newAccount.Id},newAccount);
     }
+    [Authorize(Policy="SuperAdmin")]
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteAsync(int id){
         var accountToDelete=accountService.GetById(id);

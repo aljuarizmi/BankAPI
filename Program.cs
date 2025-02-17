@@ -66,6 +66,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
         };
     }
 );
+builder.Services.AddAuthorization(options=>{
+    options.AddPolicy("SuperAdmin",policy=>policy.RequireClaim("AdminType","Super"));
+});
 var app = builder.Build();
 
 // Configurar el pipeline de la aplicación

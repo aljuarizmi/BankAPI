@@ -25,7 +25,8 @@ public class LoginService{
         //definimos un arreglo claim de objetos tipo Claim
         var claims=new[]{
             new Claim(ClaimTypes.Name,admin.Name),
-            new Claim(ClaimTypes.Email,admin.Email)
+            new Claim(ClaimTypes.Email,admin.Email),
+            new Claim("AdminType",admin.AdminType)
         };
         var key=new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config.GetSection("JWT:Key").Value));
         var creds=new SigningCredentials(key,SecurityAlgorithms.HmacSha256Signature);
