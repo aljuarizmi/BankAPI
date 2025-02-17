@@ -1,6 +1,9 @@
 using System.Reflection;
+using System.Text;
 using BankAPI.Data;
 using BankAPI.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +28,16 @@ builder.Services.AddScoped<ClientService>();
 builder.Services.AddScoped<AccountService>();
 builder.Services.AddScoped<AccountTypeService>();
 builder.Services.AddScoped<LoginService>();
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(
+    options=>{
+        options.TokenValidationParameters=new TokenValidationParameters{
+            ValidateIssuerSigningKey=true,
+            IssuerSigningKey=new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"])),
+            ValidateIssuer=false,
+            ValidateAudience=false
+        };
+    }
+);
 var app = builder.Build();
 
 // Configurar el pipeline de la aplicación
@@ -36,6 +49,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseAuthentication();//Con esto definimos que vamos a usar autentificación
 app.UseAuthorization();
 app.MapControllers();  // ✅ Esto mapea los controladores correctament
 

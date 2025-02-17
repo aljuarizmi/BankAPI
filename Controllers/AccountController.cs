@@ -3,8 +3,10 @@ using BankAPI.Services;
 using BankAPI.Data.BankModels;
 using System.Threading.Tasks;
 using BankAPI.Data.DTO;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BankAPI.Controllers;
+[Authorize]
 [ApiController]
 [Route("[controller]")]
 public class AccountController:ControllerBase{

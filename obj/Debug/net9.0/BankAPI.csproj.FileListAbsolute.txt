@@ -169,3 +169,4 @@ D:\Desarrollo\Angular\BankAPI\obj\Debug\net9.0\BankAPI.xml
 D:\Desarrollo\Angular\BankAPI\obj\Debug\net9.0\BankAPI.pdb
 D:\Desarrollo\Angular\BankAPI\obj\Debug\net9.0\BankAPI.genruntimeconfig.cache
 D:\Desarrollo\Angular\BankAPI\obj\Debug\net9.0\ref\BankAPI.dll
+D:\Desarrollo\Angular\BankAPI\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
