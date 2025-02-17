@@ -35,7 +35,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthorization();
 app.MapControllers();  // ✅ Esto mapea los controladores correctament
 
 var summaries = new[]

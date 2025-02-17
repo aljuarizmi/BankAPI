@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace BankAPI.Controllers;
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class ClientController:ControllerBase{
     private readonly ClientService _service;
     //Constructor
