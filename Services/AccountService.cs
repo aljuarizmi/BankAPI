@@ -52,6 +52,7 @@ public class AccountService{
         if(accountType is null){
             result=$"El tipo de cuenta {account.AccountType} no existe";
         }
+        //Como el id del cliente soporta nulos en la tabla Account, entonces con la función GetValueOrDefault() nos aseguramos que no sea nulo
         var clientID=account.ClientId.GetValueOrDefault();
         var client=await clientService.GetByIdAsync(clientID);
         if(client is null){
