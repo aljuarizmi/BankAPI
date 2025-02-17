@@ -41,7 +41,7 @@ public class ClientController:ControllerBase{
         }
         return client;
     }
-    //
+    //REST asincrono
     [HttpGet("async/{id}")]
     public async Task<ActionResult<Client>> GetByIdAsync(int id){
         var client=await _service.GetByIdAsync(id);

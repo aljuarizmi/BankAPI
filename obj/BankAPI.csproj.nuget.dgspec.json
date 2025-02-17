@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\desarrollo\\angular\\bankapi\\BankAPI.csproj": {}
+    "D:\\Desarrollo\\Angular\\BankAPI\\BankAPI.csproj": {}
   },
   "projects": {
-    "D:\\desarrollo\\angular\\bankapi\\BankAPI.csproj": {
+    "D:\\Desarrollo\\Angular\\BankAPI\\BankAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\desarrollo\\angular\\bankapi\\BankAPI.csproj",
+        "projectUniqueName": "D:\\Desarrollo\\Angular\\BankAPI\\BankAPI.csproj",
         "projectName": "BankAPI",
-        "projectPath": "D:\\desarrollo\\angular\\bankapi\\BankAPI.csproj",
+        "projectPath": "D:\\Desarrollo\\Angular\\BankAPI\\BankAPI.csproj",
         "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\desarrollo\\angular\\bankapi\\obj\\",
+        "outputPath": "D:\\Desarrollo\\Angular\\BankAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
