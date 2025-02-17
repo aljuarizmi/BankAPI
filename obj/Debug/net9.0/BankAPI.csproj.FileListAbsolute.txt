@@ -1,3 +1,11 @@
+D:\Desarrollo\Angular\BankAPI\obj\Debug\net9.0\BankAPI.csproj.AssemblyReference.cache
+D:\Desarrollo\Angular\BankAPI\obj\Debug\net9.0\BankAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desarrollo\Angular\BankAPI\obj\Debug\net9.0\BankAPI.AssemblyInfoInputs.cache
+D:\Desarrollo\Angular\BankAPI\obj\Debug\net9.0\BankAPI.AssemblyInfo.cs
+D:\Desarrollo\Angular\BankAPI\obj\Debug\net9.0\BankAPI.csproj.CoreCompileInputs.cache
+D:\Desarrollo\Angular\BankAPI\obj\Debug\net9.0\BankAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\Desarrollo\Angular\BankAPI\obj\Debug\net9.0\BankAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\Desarrollo\Angular\BankAPI\obj\Debug\net9.0\BankAPI.sourcelink.json
 D:\Desarrollo\Angular\BankAPI\bin\Debug\net9.0\appsettings.Development.json
 D:\Desarrollo\Angular\BankAPI\bin\Debug\net9.0\appsettings.json
 D:\Desarrollo\Angular\BankAPI\bin\Debug\net9.0\BankAPI.staticwebassets.endpoints.json
@@ -144,14 +152,6 @@ D:\Desarrollo\Angular\BankAPI\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Dr
 D:\Desarrollo\Angular\BankAPI\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 D:\Desarrollo\Angular\BankAPI\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\Desarrollo\Angular\BankAPI\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-D:\Desarrollo\Angular\BankAPI\obj\Debug\net9.0\BankAPI.csproj.AssemblyReference.cache
-D:\Desarrollo\Angular\BankAPI\obj\Debug\net9.0\BankAPI.GeneratedMSBuildEditorConfig.editorconfig
-D:\Desarrollo\Angular\BankAPI\obj\Debug\net9.0\BankAPI.AssemblyInfoInputs.cache
-D:\Desarrollo\Angular\BankAPI\obj\Debug\net9.0\BankAPI.AssemblyInfo.cs
-D:\Desarrollo\Angular\BankAPI\obj\Debug\net9.0\BankAPI.csproj.CoreCompileInputs.cache
-D:\Desarrollo\Angular\BankAPI\obj\Debug\net9.0\BankAPI.MvcApplicationPartsAssemblyInfo.cs
-D:\Desarrollo\Angular\BankAPI\obj\Debug\net9.0\BankAPI.MvcApplicationPartsAssemblyInfo.cache
-D:\Desarrollo\Angular\BankAPI\obj\Debug\net9.0\BankAPI.sourcelink.json
 D:\Desarrollo\Angular\BankAPI\obj\Debug\net9.0\scopedcss\bundle\BankAPI.styles.css
 D:\Desarrollo\Angular\BankAPI\obj\Debug\net9.0\staticwebassets.build.json
 D:\Desarrollo\Angular\BankAPI\obj\Debug\net9.0\staticwebassets.development.json
