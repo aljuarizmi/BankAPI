@@ -60,6 +60,8 @@ builder.Services.AddScoped<ClientService>();
 builder.Services.AddScoped<AccountService>();
 builder.Services.AddScoped<AccountTypeService>();
 builder.Services.AddScoped<LoginService>();
+//Registra los servicios requeridos por los servicios de autenticación. 
+//DefaultScheme especifica el nombre del esquema que se utilizará de forma predeterminada cuando no se solicita un esquema específico.
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(
     options=>{
         options.TokenValidationParameters=new TokenValidationParameters{
@@ -70,7 +72,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
         };
     }
 );
+//Agrega servicios de autorización a la IServiceCollection especificada
 builder.Services.AddAuthorization(options=>{
+    //Agregua una política creada a partir de un delegado con el nombre proporcionado.
     options.AddPolicy("SuperAdmin",policy=>policy.RequireClaim("AdminType","Super"));
 });
 var app = builder.Build();
@@ -86,7 +90,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthentication();//Con esto definimos que vamos a usar autentificación
 app.UseAuthorization();
-app.MapControllers();  // ✅ Esto mapea los controladores correctament
+app.MapControllers();  //Esto mapea los controladores correctament
 
 var summaries = new[]
 {
