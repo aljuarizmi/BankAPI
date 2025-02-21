@@ -10,15 +10,18 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddControllers();  // ✅ Agrega soporte para controladores
-builder.Services.AddEndpointsApiExplorer(); // ✅ Permite la exploración de API
+builder.Services.AddControllers();  // Agrega soporte para controladores
+builder.Services.AddEndpointsApiExplorer(); // Permite la exploración de API
 builder.Services.AddSwaggerGen(options =>
 {
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    //Una ruta absoluta al archivo que contiene comentarios XML
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    //Inyectar descripciones fáciles de entender para operaciones, parámetros y esquemas basados ​​en archivos de comentarios XML
     options.IncludeXmlComments(xmlPath);
 
-    // ✅ **Agregar definición de seguridad JWT para Swagger** (en rojo)
+    // **Agregar definición de seguridad JWT para Swagger** (en rojo)
+    //Agregue una o más "securityDefinitions" que describan cómo se protege su API al Swagger generado.
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Name = "Authorization",
@@ -30,6 +33,7 @@ builder.Services.AddSwaggerGen(options =>
     });
 
     // ✅ **Agregar requerimiento de seguridad para todos los endpoints** (en rojo)
+    //Añade un requisito de seguridad global
     options.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {
