@@ -62,11 +62,20 @@ builder.Services.AddScoped<AccountTypeService>();
 builder.Services.AddScoped<LoginService>();
 //Registra los servicios requeridos por los servicios de autenticación. 
 //DefaultScheme especifica el nombre del esquema que se utilizará de forma predeterminada cuando no se solicita un esquema específico.
+//Habilita la autenticación con JWT (Bearer Tokens).
+//Especifica que el esquema de autenticación será "Bearer".
+//AddJwtBearer(options=>): Configura los parámetros para validar los tokens JWT.
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(
     options=>{
+        //options.TokenValidationParameters = new TokenValidationParameters: Define las reglas para validar los tokens JWT.
         options.TokenValidationParameters=new TokenValidationParameters{
+            //Activa la validación de la firma del token.
             ValidateIssuerSigningKey=true,
+            //Especifica la clave secreta (JWT:Key) para firmar y validar los tokens.
+            //Usa una clave simétrica (SymmetricSecurityKey), lo que significa que la misma clave se usa para firmar y verificar el token.
             IssuerSigningKey=new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"])),
+            //Deshabilita la validación del emisor (Issuer) y del público (Audience).
+            //Esto significa que el token será aceptado sin importar de dónde provenga.
             ValidateIssuer=false,
             ValidateAudience=false
         };
